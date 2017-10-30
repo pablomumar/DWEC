@@ -1,26 +1,20 @@
 var imagenSelect = false;
+var offsetX;
+var offsetY;
 
-var agarrar = () => {
-    imagenSelect = true;
+var agarrar = (ev) => {
+    imagenSelect = !imagenSelect;
+    offsetX = ev.offsetX;
+    offsetY = ev.offsetY;
+    // offset toma la distancia (x e y) respecto al elemnto donde surge el evento
 };
 
-var soltar = () => {
-    imagenSelect = false;
-};
-
-document.getElementById('imagen').addEventListener('mousedown', agarrar);
-document.addEventListener('mouseup', soltar);
+document.getElementById('imagen').addEventListener('click', agarrar);
 document.addEventListener('mousemove', function(ev){
     let img = document.getElementById('imagen');
-    let izq = getComputedStyle(img).getPropertyValue('margin-left');
-    let top = getComputedStyle(img).getPropertyValue('margin-top');
     if (imagenSelect){
-        img.hspace = ev.clientX - parseInt(izq);
-        img.vspace = ev.clientY - parseInt(top);
-        console.log('izq: ' + izq);
-        console.log('top: ' + top);
-        console.log('cliX: ' + ev.clientX);
-        console.log('cliY: ' + ev.clientY);
+        img.style.left = (ev.clientX - offsetX) + "px";
+        img.style.top = (ev.clientY - offsetY) + "px";
     }
 });
 
