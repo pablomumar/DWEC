@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #correcto, #correcto2, #correcto3, #correcto4, #correcto5, #correcto6 {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        visibility: hidden;
+    }
+
+    #incorrecto, #incorrecto2, #incorrecto3, #incorrecto4, #incorrecto5, #incorrecto6 {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        visibility: hidden;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Relacion 3 Unidad 4</title>
+</head>
+<body>
+    <form id="form" method="post" action="">
+        <ul style="list-style: none;">
+            <li id="id_nombre" >
+                <br><label  for="nombre">Nombre </label><br>
+                <div>
+                    <input id="nombre" name="nombre"  type="text" maxlength="255" value="" onkeyup="validar_nombre()"/>
+                    <img id="correcto" src="img\correcto.jpg"/>
+                    <img id="incorrecto" src="img\incorrecto.jpg"/>
+                </div>
+            </li>		<li id="lid_apellidos" >
+                <br><label for="apellidos">Apellidos </label><br>
+                <div>
+                    <input id="apellidos" name="apellidos" type="text" maxlength="255" value="" onkeyup="validar_apellidos()"/>
+                    <img id="correcto2" src="img\correcto.jpg"/>
+                    <img id="incorrecto2" src="img\incorrecto.jpg"/>
+                </div>
+            </li>		<li id="id_DNI" >
+                <br><label for="DNI">DNI </label><br>
+                <div>
+                    <input id="DNI" name="DNI" type="text" maxlength="255" value="" onkeyup="validar_DNI()"/>
+                    <img id="correcto3" src="img\correcto.jpg"/>
+                    <img id="incorrecto3" src="img\incorrecto.jpg"/>
+                </div>
+            </li>		<li id="id_telefono" >
+                <br><label for="telefono">Tlfn </label>
+                <div>
+                    <input id="telefono" name="telefono" type="text" maxlength="255" value="" onkeyup="validar_tlfn()"/>
+                    <img id="correcto4" src="img\correcto.jpg"/>
+                    <img id="incorrecto4" src="img\incorrecto.jpg"/>
+                </div>
+            </li>		<li id="id_email" >
+                <br><label for="email">E-mail </label>
+                <div>
+                    <input id="email" name="email" type="text" maxlength="255" value="" onkeyup="validar_email()"/>
+                    <img id="correcto5" src="img\correcto.jpg"/>
+                    <img id="incorrecto5" src="img\incorrecto.jpg"/>
+                </div>
+            </li>		<li id="id_usuario" >
+                <br><label for="usuario">Usuario </label>
+                <div>
+                    <input id="usuario" name="usuario" type="text" maxlength="255" value="" onkeyup="validar_usuario()"/>
+                    <img id="correcto6" src="img\correcto.jpg"/>
+                    <img id="incorrecto6" src="img\incorrecto.jpg"/>
+                </div>
+            </li>
+        </ul>
+    </form>
+    <script src="relacion3.js"></script>
+</body>
+</html>
