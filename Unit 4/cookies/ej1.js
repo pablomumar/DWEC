@@ -15,8 +15,7 @@ function guardarUsuario() {
     tiempoExpire.setSeconds(5000);
     tiempoExpireString = tiempoExpire.toUTCString();
     nombreUsuario = document.getElementById('UserName').value;
-    document.cookie = 'username=' + nombreUsuario;
-    document.cookie = 'expires='+ tiempoExpireString;
+    document.cookie = 'username=' + nombreUsuario +'; expires=' + tiempoExpireString ;
     alert('Hola ' + nombreUsuario + ' Expires: ' + tiempoExpireString);
     console.log(document.cookie);
 }
