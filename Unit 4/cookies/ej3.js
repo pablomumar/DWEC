@@ -26,4 +26,4 @@ function borrarcookies() {
 
 addEventListener('unload', borrarcookies);
 
-//Este evento realiza la función borrar cookies al cerrar el navegador
+//Este evento realiza la función borrar cookies al cerrar el navegador.
