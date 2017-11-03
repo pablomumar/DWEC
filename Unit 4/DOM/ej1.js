@@ -22,6 +22,7 @@ var darInfo = () => {
     newp.innerHTML = '.<br> Nº de enlaces a Google: ' + n_link;
     let n_link_3p = comprobar_link(direc[2]);
     newp.innerHTML = '.<br> Nº de enlaces del 3º párrafo: ' + n_link;
+    document.body.appendChild(newp)
 }
 
 function comprobar_link(direc){
