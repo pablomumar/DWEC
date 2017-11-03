@@ -2,12 +2,12 @@ function setCookie(){
     usuario = document.getElementById('UserName');
     document.cookie ? (
         cookiesplit = document.cookie.split(' '),
-            alert('Hola ' + cookiesplit[0]),
-            document.write("<input type='submit' onclick='borrarcookies()' value='Borrar'>")
+        alert('Hola ' + cookiesplit[0]),
+        document.write("<input type='submit' onclick='borrarcookies()' value='Borrar'>")
     ):(
         document.write("UserName:&nbsp<input type='text' id='UserName'/>"),
-            document.write("<br><input type='submit' onclick='guardarUsuario()' value='Guardar'>"),
-            document.write("<input type='submit' onclick='borrarcookies()' value='Borrar'>"));
+        document.write("<br><input type='submit' onclick='guardarUsuario()' value='Guardar'>"),
+        document.write("<input type='submit' onclick='borrarcookies()' value='Borrar'>"));
 }
 
 function guardarUsuario() {
