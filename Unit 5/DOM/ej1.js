@@ -15,14 +15,15 @@ var setPage = () => {
 
 var darInfo = () => {
     let newp = document.createElement('p');
-    let direc = document.getElementsByTagName('p');
-    newp.innerHTML = 'Nº de enlaces: ' + direc.length;
-    newp.innerHTML = '.<br> Direccion del penúltimo enlace: ' + direc[1].href;
+    document.body.appendChild(newp);
+    let links = document.getElementsByTagName('a');
+    newp.innerHTML = 'Nº de enlaces: ' + links.length;
+    newp.innerHTML = '.<br> Direccion del penúltimo enlace: ' + links[(links.length - 2)].href;
     let n_link = comprobar_link(direc);
     newp.innerHTML = '.<br> Nº de enlaces a Google: ' + n_link;
-    let n_link_3p = comprobar_link(direc[2]);
+    let parraf = document.getElementsByTagName('p');
+    let n_link_3p = comprobar_link(parraf[2]);
     newp.innerHTML = '.<br> Nº de enlaces del 3º párrafo: ' + n_link;
-    document.body.appendChild(newp)
 }
 
 function comprobar_link(direc){
