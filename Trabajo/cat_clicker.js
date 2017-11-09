@@ -1,7 +1,18 @@
-var lista_gatetes = document.getElementsByTagName('img');
 var lista_cont = [];
 
+function crear_img(n_img) {
+    for (m = 0; m < n_img; m++){
+        new_img = document.createElement('img');
+        new_img.src = 'img/gatete.jpg';
+        new_img.id = 'gatete' + (m+1);
+        document.body.appendChild(new_img);
+    }
+}
+
+var lista_gatetes = document.getElementsByTagName('img');
+
 var crear_parrafos = () => {
+    crear_img(9);
     for (x = 0; x < lista_gatetes.length; x++){
         newp = document.createElement('p');
         newp.id = 'parrafo' + (x +1);
@@ -31,3 +42,4 @@ function contar(event) {
 
 addEventListener('load', crear_parrafos);
 addEventListener('load', crear_cont);
+addEventListener('click', contar);
