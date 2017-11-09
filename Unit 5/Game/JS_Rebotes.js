@@ -23,7 +23,6 @@ var update_coord = () =>{
 
 var move = () => {
     update_coord();
-    console.log(parseInt(bola.getAttribute('cy')));
     bola.setAttribute('cx', parseInt(bola.getAttribute('cx')) + movimiento_bola[0]);
     bola.setAttribute('cy', parseInt(bola.getAttribute('cy')) + movimiento_bola[1]);
 }
