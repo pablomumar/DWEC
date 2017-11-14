@@ -3,9 +3,9 @@ class Partida{
 
     }
 
-    set_NGame(){}
+    setNGame(){}
 
-    set_Tablero(){}
+    setTablero(){}
 }
 
 class Comida{
@@ -41,4 +41,14 @@ class Serpiente{
     checkPos(){}
 }
 
-class HUD{}
+class HUD{
+    constructor(contador){
+        this.contador = contador;
+    }
+
+    setPuntuacion(){}
+
+    contar(){}
+
+    showPuntuacion(){}
+}
