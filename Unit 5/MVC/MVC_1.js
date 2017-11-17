@@ -13,7 +13,7 @@ class PostIt{
         // Falta el atributo hora para la hora de creacion
     }
 
-    addText(event){ //evento onclick para hallar en que p estoy escribiendo
+    addText(event){ //evento onclick(por ahora) para hallar en que input estoy escribiendo y añadir value en la clase
         let id_click = event.target.id;
         console.log('eee', id_click);
         if (id_click && id_click.match(regex_id_titulo)){
@@ -59,5 +59,4 @@ function crear(){
 
 crear();
 crear();
-
 addEventListener('click', mis_postit.lista_postit[0].addText);
