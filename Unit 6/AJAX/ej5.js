@@ -23,7 +23,7 @@ function RefreshMsg(){
 function Refresh() {
     RefreshRemi();
     RefreshMsg();
+    setTimeout(Refresh, 1000);
 }
 
 Refresh();
-setTimeout(Refresh, 5000);
