@@ -1,9 +1,11 @@
 <div class="container">
     <label>
       Titulo:
-      <input type="text" id="input_titulo">
+      <input type="text" id="input_titulo">{{titulo}}
+    </label>
+    <label>
       Contenido:
-      <input type="text" id="input_contenido">
+      <input type="text" id="input_contenido">{{contenido}}
     </label>
     <button (click)="anadirNota()">Nueva nota</button>
 </div>

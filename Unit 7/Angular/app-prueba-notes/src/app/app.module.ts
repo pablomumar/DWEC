@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
-import { ContenidoComponent } from './contenido/contenido.component';
 import { AppNotasComponent } from './app-notas/app-notas.component';
 
 
@@ -12,7 +11,6 @@ import { AppNotasComponent } from './app-notas/app-notas.component';
   declarations: [
     AppComponent,
     CabeceraComponent,
-    ContenidoComponent,
     AppNotasComponent
   ],
   imports: [

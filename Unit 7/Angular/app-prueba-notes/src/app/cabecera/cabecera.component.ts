@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input , Output , EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cabecera',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabecera.component.scss']
 })
 export class CabeceraComponent implements OnInit {
-  titulo: string;
-  contenido: string;
+  @Input() titulo: string;
+  @Input() contenido: string;
+  @Output() evento:EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }

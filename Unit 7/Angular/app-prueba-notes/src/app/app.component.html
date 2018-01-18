@@ -2,5 +2,9 @@
   <app-cabecera></app-cabecera>
 </div>
 <div class="container">
-  <app-contenido></app-contenido>
+    <ul>
+      <li *ngFor="let nota of listaNotas">
+        <div style="background-color: darkorange; width: 100px; height: 100px"></div>
+      </li>
+    </ul>
 </div>

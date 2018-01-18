@@ -10,12 +10,14 @@ export class AppComponent {
 
   listaNotas = [];
 
+  titulo = '';
+  contenido = '';
+
   constructor() {
   }
 
   anadirNota() {
-    const titulo = window.prompt('introduce título');
-    const contenido = window.prompt('introduce el contenido');
-    this.listaNotas.push({titulo: titulo, contenido: contenido});
-}
+    console.log('dsfasdf');
+    this.listaNotas.push({titulo: this.titulo, contenido: this.contenido});
+  }
 }
