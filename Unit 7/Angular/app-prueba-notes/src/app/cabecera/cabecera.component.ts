@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
   titulo: string;
+  contenido: string;
+
   constructor() {
   }
 
