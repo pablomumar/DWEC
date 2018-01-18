@@ -1,0 +1,8 @@
+Servicio:
+a) Miembro como subject
+b) Método que devuelve ese miembro como observable
+c) Simula en el servicio que se da un cambio en subject (next)
+
+Componente:
+- Se suscribe mediante el método del servicio
+- Enlazar en vista el dato
