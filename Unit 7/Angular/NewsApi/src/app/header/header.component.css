@@ -1,0 +1,16 @@
+.input_div{
+  height: 10vh;
+  width: 50vw;
+}
+
+.input_info{
+  background-color: darkgray;
+  color: black;
+  border-style: none;
+  height: 100%;
+  width: 100%;
+}
+
+.input_info:hover{
+  background-color: lightgray;
+}
