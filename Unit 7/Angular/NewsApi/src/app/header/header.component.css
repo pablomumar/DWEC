@@ -1,3 +1,16 @@
+.image {
+  height: 100%;
+  width: auto;
+}
+
+.obj {
+  height: 12vh;
+}
+
+button {
+  height: 10vh;
+}
+
 .input_div{
   height: 10vh;
   width: 50vw;
@@ -8,9 +21,14 @@
   color: black;
   border-style: none;
   height: 100%;
-  width: 100%;
+  width: 85%;
+}
+
+.buscar{
+  width: 15%;
 }
 
 .input_info:hover{
   background-color: lightgray;
+  border-style: none;
 }
