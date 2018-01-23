@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ContenidoComponent } from './contenido/contenido.component';
 import { NoticiaComponent } from './noticia/noticia.component';
+import { DatosService } from './datos.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { NoticiaComponent } from './noticia/noticia.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [DatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
