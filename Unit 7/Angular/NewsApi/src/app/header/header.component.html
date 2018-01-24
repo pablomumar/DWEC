@@ -1,44 +1,63 @@
 <div>
-  <nav class="navbar navbar-default">
+  <nav>
     <div class="container-fluid">
-
-      <a href="#"><img src="../../assets/imgs/Logotrans.png" alt="" class="logo"></a>
-
-      <form class="navbar-form navbar-center" role="search">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit" (click)="hacerRequest()">Go!</button>
-          </span>
-          <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="keyboard">
+      <div class="row navbar navbar-default">
+        <div class="float-left-mediaq">
+          <a href="#"><img src="../../assets/imgs/Logotrans.png" alt="" class="logo"></a>
         </div>
-      </form>
 
-      <ul class="nav">
+        <form class="navbar-form navbar-center float-right-mediaq" role="search">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" (click)="hacerRequest()">Go!</button>
+            </span>
+            <input type="text" class="form-control" placeholder="Buscar"><!-- [(ngModel)]="keyboard"-->
+          </div>
+        </form>
+
+        <button class="btn btn-default desaparece">Color Fondo</button>
+        <button class="btn btn-default desaparece">Color Head</button>
+
+      </div>
+
+      <ul class="nav container-fluid margen-submenu"> <!-- container-fluid hace que este debajo del nav principal como submenu -->
         <li class="nav-item dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Países<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Another action</a></li>
+            <li><a href="#">ESP!</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">UK</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">ITA</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">FR</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">DE</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Preferencia<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Another action</a></li>
+            <li><a href="#">Últimas</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Populares</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">Relevancia</a></li>
           </ul>
         </li>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tiempo <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ayer</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Hace un mes</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Hace un año</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </nav>

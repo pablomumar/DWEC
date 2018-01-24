@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HeaderComponent } from "./header/header.component";
+//import { HeaderComponent } from "./header/header.component";
 
 @Injectable()
 export class DataInputService {
-  constructor(private header: HeaderComponent) {
+  constructor() {
   }
 
-  InfoInputService(){
+  /*InfoInputService(){
     return this.header.darInfoInput()
-  }
+  }*/
 
 }

@@ -14,9 +14,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(private datos: DatosService) { }
 
-  darInfoInput(){
+  /*darInfoInput(){
     return this.keyboard; //manda keyboard a data-input.service.ts, este la pasa a datos.service.ts (Sigue error). Hacer lo mismo con los filtros
-  }
+  }*/
 
   ngOnInit() {
 
