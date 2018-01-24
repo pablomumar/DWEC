@@ -1,0 +1,7 @@
+Circular Dependency issue:
+    - Con ngModel en el input, quiero que la entrada de keyboard 'entre' en la url de la request al hacer la peticion.
+     He visto por ahi que se puede crear otro servicio para cortar este bucle, y he intentado pasarle a uno los datos del
+     input, para que este servicio se lo pase al que hace la request, pero mas bien he alargado el proceso y sigue igual.
+
+    - Puedo hacer el breadcrumb en la seleccion de filtros? (y que cuente para la nota del trabajo)
+
