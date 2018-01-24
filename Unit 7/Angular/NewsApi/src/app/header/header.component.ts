@@ -8,12 +8,26 @@ import {DatosService} from "../datos.service";
 })
 export class HeaderComponent implements OnInit {
 
+  keyboard = '';
+  private filtro = false;
+  private idioma = false;
+
   constructor(private datos: DatosService) { }
 
-  ngOnInit() {
-    this.datos.exportar().subscribe(data => {
-      console.log(data);
-    });
+  darInfoInput(){
+    return this.keyboard; //manda keyboard a data-input.service.ts, este la pasa a datos.service.ts (Sigue error). Hacer lo mismo con los filtros
   }
+
+  ngOnInit() {
+
+  }
+
+  hacerRequest() {
+    if (this.keyboard.length > 0){
+      this.datos.LoadData().subscribe(data => {
+        console.log(data)
+      })
+    }
+  };
 
 }

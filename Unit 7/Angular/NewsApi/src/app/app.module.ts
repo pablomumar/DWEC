@@ -7,7 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { ContenidoComponent } from './contenido/contenido.component';
 import { NoticiaComponent } from './noticia/noticia.component';
 import { DatosService } from './datos.service';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from "@angular/common/http";
+import { DataInputService } from './data-input.service';
 
 
 
@@ -20,10 +21,9 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    HttpClient
+    HttpClientModule
   ],
-  providers: [DatosService],
+  providers: [DatosService, DataInputService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
