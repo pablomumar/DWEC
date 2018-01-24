@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { ContenidoComponent } from './contenido/contenido.component';
 import { NoticiaComponent } from './noticia/noticia.component';
 import { DatosService } from './datos.service';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { DatosService } from './datos.service';
     NoticiaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    HttpClient
   ],
   providers: [DatosService],
   bootstrap: [AppComponent]
