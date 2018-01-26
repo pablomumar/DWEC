@@ -8,10 +8,10 @@ import { ContenidoComponent } from './contenido/contenido.component';
 import { NoticiaComponent } from './contenido/noticia/noticia.component';
 import { DatosService } from './datos.service';
 import { HttpClientModule} from "@angular/common/http";
-import { DataInputService } from './data-input.service';
 import { FormsModule } from "@angular/forms";
 import { NoticiaServService } from './noticia-serv.service';
 import { ListaNoticiasComponent } from './contenido/lista-noticias/lista-noticias.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -20,14 +20,15 @@ import { ListaNoticiasComponent } from './contenido/lista-noticias/lista-noticia
     HeaderComponent,
     ContenidoComponent,
     NoticiaComponent,
-    ListaNoticiasComponent
+    ListaNoticiasComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [DatosService, DataInputService, NoticiaServService],
+  providers: [DatosService, NoticiaServService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

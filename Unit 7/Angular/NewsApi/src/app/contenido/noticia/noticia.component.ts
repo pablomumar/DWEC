@@ -26,7 +26,7 @@ export class NoticiaComponent implements OnInit {
 
   ngOnInit() {
     this.noticiaSubscription = this.noticiaSer.$visible.subscribe((noticia: NoticiaComponent) => {
-      this.noticia.isVisible = noticia.title === this.noticia.title;
+      //this.noticia.isVisible = noticia.title === this.noticia.title;
     })
   }
 
