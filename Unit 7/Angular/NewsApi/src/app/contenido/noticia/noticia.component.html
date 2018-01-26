@@ -1,0 +1,10 @@
+<div>
+  <button (click)="toggle()">{{title}}</button>
+  <p *ngIf="noticia.isVisible()">
+    {{author}}
+    {{description}}
+    {{publishedAt}}
+    {{url_new}}
+    {{url_image}}
+  </p>
+</div>

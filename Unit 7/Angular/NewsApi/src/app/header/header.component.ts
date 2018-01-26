@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DatosService} from "../datos.service";
+import { ContenidoComponent } from "../contenido/contenido.component";
 
 @Component({
   selector: 'app-header',
@@ -12,22 +12,16 @@ export class HeaderComponent implements OnInit {
   private filtro = false;
   private idioma = false;
 
-  constructor(private datos: DatosService) { }
+  constructor() { }
 
-  /*darInfoInput(){
+  darInfoInput() {
     return this.keyboard; //manda keyboard a data-input.service.ts, este la pasa a datos.service.ts (Sigue error). Hacer lo mismo con los filtros
-  }*/
+  }
 
   ngOnInit() {
 
   }
 
-  hacerRequest() {
-    if (this.keyboard.length > 0){
-      this.datos.LoadData().subscribe(data => {
-        console.log(data)
-      })
-    }
-  };
+
 
 }
