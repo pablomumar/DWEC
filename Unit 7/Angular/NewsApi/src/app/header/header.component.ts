@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DatosService} from "../datos.service";
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  ListaNoticias: Array<any>[];
+
   keyboard = '';
   private filtro = false;
   private idioma = false;
 
-  constructor() { }
+  constructor(private datos: DatosService) {
+  }
+
+  hacerRequest(){
+    this.datos.LoadData(this.keyboard).subscribe(data => {
+      console.log(data);
+     // this.ListaNoticias.push(data.articles);
+    })
+  }
+
+  pasarInfo(){
+    return this.keyboard;
+  }
 
   ngOnInit() {
 

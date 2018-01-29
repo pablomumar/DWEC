@@ -1,9 +1,9 @@
 * {
   margin: 0;
-  background-color: crimson;
+  background-color: lightgray;
 }
 
 .footer {
-  height: 100px; /* .footer must be the same height as .push */
+  height: 50px; /* .footer must be the same height as .push */
 }
 
