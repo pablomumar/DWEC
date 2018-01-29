@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  background-color: crimson;
+}
+
+.footer {
+  height: 100px; /* .footer must be the same height as .push */
+}
+
