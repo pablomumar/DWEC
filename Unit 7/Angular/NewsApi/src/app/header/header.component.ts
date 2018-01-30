@@ -24,8 +24,8 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  pasarInfo(){
-    return this.keyboard;
+  pasarArrayReq(){
+    return this.ListaNoticias;
   }
 
   ngOnInit() {

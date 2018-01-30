@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NoticiaComponent} from "../noticia/noticia.component";
-import {DatosService} from "../../datos.service";
+import {HeaderComponent} from "../../header/header.component";
 
 
 @Component({
@@ -10,17 +10,12 @@ import {DatosService} from "../../datos.service";
 })
 export class ListaNoticiasComponent implements OnInit {
 
-  ListaNoticias: NoticiaComponent[];
-
-  constructor(private datos: DatosService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  hacerRequest() {
-    this.datos.LoadData().subscribe(data => {
-      console.log(data);
-      this.ListaNoticias.push(data.articles);
-    })
-  };
+
+
+
 }
