@@ -19,12 +19,14 @@
         <button class="btn btn-default desaparece">Color Head</button>
 
       </div>
+
+
       <div class="row">
-        <ul class="breadcrumb col-md-12 col-sm-12 align-content-center">
-          <li class="col-md-3 col-sm-2"><a href="#">Siempre</a></li>
-          <li class="col-md-3 col-sm-2"><a href="#">Hoy</a></li>
-          <li class="col-md-3 col-sm-2"><a href="#">Semana</a></li>
-          <li class="col-md-3 col-sm-2"><a href="#">Mes</a></li>
+        <ul class="breadcrumb col-md-12 col-sm-12 desaparece">
+          <li class="breadcrumb-item active col-md-3 col-sm-3 text-center"><a href="#" (click)="categoryEvery()">Todo</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center"><a href="#" (click)="categorySport()">Deporte</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center"><a href="#" (click)="categoryScience()">Ciencia</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center"><a href="#" (click)="categoryEntert()">Entretenimiento</a></li>
         </ul>
       </div>
 
@@ -32,26 +34,39 @@
         <li class="nav-item dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Países<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">ESP!</a></li>
+            <li><a href="#" (click)="countryEvery()">Todo</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">UK</a></li>
+            <li><a href="#" (click)="countryEsp()">ESP</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">ITA</a></li>
+            <li><a href="#" (click)="countryUK()">UK</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">FR</a></li>
+            <li><a href="#" (click)="countryFR()">FR</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">DE</a></li>
+            <li><a href="#" (click)="countryDE()">DE</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cuando<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" (click)="whenAlways()">Siempre</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" (click)="whenToday()">Hoy</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" (click)="whenYesterday()">Ayer</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" (click)="whenMonth()">Mes</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Preferencia<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Últimas</a></li>
+            <li><a href="#" (click)="preferencyLast()">Últimas</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Populares</a></li>
+            <li><a href="#" (click)="preferencyPopular()">Populares</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Relevancia</a></li>
+            <li><a href="#" (click)="preferencyRelev()">Relevancia</a></li>
           </ul>
         </li>
 

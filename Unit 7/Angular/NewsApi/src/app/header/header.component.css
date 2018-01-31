@@ -25,3 +25,8 @@
     width: 50%;
   }
 }
+
+.breadcrumb > li + li:before {
+  content: "";
+}
+
