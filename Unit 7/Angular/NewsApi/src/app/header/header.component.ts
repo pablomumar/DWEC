@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DatosService} from "../datos.service";
-import {$} from "protractor";
 
 @Component({
   selector: 'app-header',
