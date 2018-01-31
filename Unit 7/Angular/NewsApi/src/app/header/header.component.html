@@ -1,7 +1,7 @@
 <div>
   <nav>
     <div class="container-fluid">
-      <div class="row navbar navbar-default">
+      <div class="row navbar navbar-default" id="mainHeader">
         <div class="float-left-mediaq">
           <a href="#"><img src="../../assets/imgs/Logotrans.png" alt="" class="logo"></a>
         </div>
@@ -15,18 +15,18 @@
           </div>
         </form>
 
-        <button class="btn btn-default desaparece">Color Fondo</button>
-        <button class="btn btn-default desaparece">Color Head</button>
+        <button class="btn btn-default desaparece_boton" (click)="pedir($event)">Cambia Fondo</button>
+        <button class="btn btn-default desaparece_boton" (click)="pedir($event)">Cambia Color</button>
 
       </div>
 
 
       <div class="row">
         <ul class="breadcrumb col-md-12 col-sm-12 desaparece">
-          <li class="breadcrumb-item active col-md-3 col-sm-3 text-center"><a href="#" (click)="categoryEvery()">Todo</a></li>
-          <li class="breadcrumb-item col-md-3 col-sm-3 text-center"><a href="#" (click)="categorySport()">Deporte</a></li>
-          <li class="breadcrumb-item col-md-3 col-sm-3 text-center"><a href="#" (click)="categoryScience()">Ciencia</a></li>
-          <li class="breadcrumb-item col-md-3 col-sm-3 text-center"><a href="#" (click)="categoryEntert()">Entretenimiento</a></li>
+          <li class="breadcrumb-item active col-md-3 col-sm-3 text-center" id="catAll"><a href="#" (click)="categoryEvery()">Todo</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catSport"><a href="#" (click)="categorySport()">Deporte</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catScience"><a href="#" (click)="categoryScience()">Ciencia</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catMisc"><a href="#" (click)="categoryEntert()">Mix</a></li>
         </ul>
       </div>
 

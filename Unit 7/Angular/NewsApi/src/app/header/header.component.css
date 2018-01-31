@@ -5,6 +5,12 @@
 }
 
 @media (max-width: 700px) {
+  .desaparece_boton{
+    display:none;
+  }
+}
+
+@media (max-width: 570px) {
   .desaparece{
     display:none;
   }
@@ -26,7 +32,19 @@
   }
 }
 
+.breadcrumb{
+  padding: 0 0;
+}
+
+.breadcrumb>li{
+  padding: .75rem 1rem;
+}
+
 .breadcrumb > li + li:before {
   content: "";
 }
 
+.in_select{
+  background-color: darkgray;
+  height:100%;
+}

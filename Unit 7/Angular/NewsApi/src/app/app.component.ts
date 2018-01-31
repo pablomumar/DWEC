@@ -11,4 +11,15 @@ export class AppComponent {
   constructor () {
   }
 
+  cambiaFondo(){
+
+  }
+
+  cambiaColores($event):void{
+    console.log('dfsdf');
+    $('#mainHeader').addClass('blue');
+    $('button').addClass('blueClaro');
+  }
+
+
 }

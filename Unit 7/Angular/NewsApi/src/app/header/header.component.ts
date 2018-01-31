@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {DatosService} from "../datos.service";
 
 @Component({
@@ -7,6 +7,7 @@ import {DatosService} from "../datos.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Output() pasaFunciones = new EventEmitter();
 
   ListaNoticias: Array<any>[];
 
@@ -17,41 +18,64 @@ export class HeaderComponent implements OnInit {
   date = new Date();
   fecha_act = '';
   busq_fecha = '';
+  bread='';
+  Listcategories = ['catAll', 'catSport', 'catScience', 'catMisc'];
+
 
   constructor(private datos: DatosService) {
   }
 
   hacerRequest(){
+    this.categoryEvery();
     this.datos.LoadDataEvery(this.keyboard, this.filtro, this.country, this.busq_fecha).subscribe(data => {
       console.log(data);
      //this.ListaNoticias.push(data);
-    })
+    });
   }
 
   pasarArrayReq(){
     return this.ListaNoticias;
   }
 
+  Bread(id){ //Cambia los colores del Breadcrumb al clickar
+    if (this.Listcategories.indexOf(id) > -1){
+      this.Listcategories.splice(this.Listcategories.indexOf(id), 1)
+    }
+    $('#' + id).addClass('in_select');
+    for (let cat of this.Listcategories){
+      $('#' + cat).removeClass('in_select');
+    }
+    this.Listcategories.push(id);
+  }
+
   categoryEvery(){
+    this.bread = 'catAll';
+    this.Bread(this.bread);
     return this.category='';
   };
 
   categorySport(){
     this.datos.LoadSourceData('sport').subscribe(data=>
       console.log(data)
-  )
+  );
+    this.bread = 'catSport';
+    this.Bread(this.bread);
   };
 
   categoryScience(){
     this.datos.LoadSourceData('science').subscribe(data=>
       console.log(data)
-  )
+  );
+    this.bread = 'catScience';
+    this.Bread(this.bread);
   };
 
   categoryEntert(){
     this.datos.LoadSourceData('entertainment').subscribe(data=>
       console.log(data)
-  )
+  );
+    this.bread = 'catMisc';
+    this.Bread(this.bread);
   };
 
   countryEvery(){
@@ -123,6 +147,10 @@ export class HeaderComponent implements OnInit {
 
   preferencyRelev(){
     return this.filtro='relevancy';
+  }
+
+  pedir(event){
+    this.pasaFunciones.emit(null)
   }
 
   ngOnInit() {
