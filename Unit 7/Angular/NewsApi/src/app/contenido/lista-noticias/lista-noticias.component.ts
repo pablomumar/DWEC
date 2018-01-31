@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {NoticiaComponent} from "../noticia/noticia.component";
-import {HeaderComponent} from "../../header/header.component";
-
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lista-noticias',
@@ -10,12 +7,16 @@ import {HeaderComponent} from "../../header/header.component";
 })
 export class ListaNoticiasComponent implements OnInit {
 
+  lista: Array<any>;
+
   constructor() { }
 
-  ngOnInit() {
+  request(event):void{
+    this.lista = event.request;
+    console.log('recibido')
   }
 
-
-
-
+  ngOnInit() {
+    this.request(event);
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { DatosService } from "../../datos.service";
 import {NoticiaServService} from "../../noticia-serv.service";
 import {Subscription } from "rxjs/Subscription";
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-noticia',
@@ -9,8 +10,9 @@ import {Subscription } from "rxjs/Subscription";
   styleUrls: ['./noticia.component.css']
 })
 export class NoticiaComponent implements OnInit {
-  @Input() noticia: NoticiaComponent;
+
   private noticiaSubscription: Subscription;
+  noticia: any;
   id: any = null;
   name_source: string;
   source: Array<any>[] = [this.id, this.name_source];
@@ -21,12 +23,12 @@ export class NoticiaComponent implements OnInit {
   url_image: string;
   publishedAt: string;
 
-  constructor(private noticiaSer: NoticiaServService) { }
+  constructor(private noticiaSer: NoticiaServService, private route: ActivatedRoute) { }
 
 
   ngOnInit() {
     this.noticiaSubscription = this.noticiaSer.$visible.subscribe((noticia: NoticiaComponent) => {
-      //this.noticia.isVisible = noticia.title === this.noticia.title;
+      //this.noticiaSer.isVisible = noticia.title === this.noticia.title;
     })
   }
 
