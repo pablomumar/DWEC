@@ -1,6 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {DatosService} from "../datos.service";
 import {} from '@types/jquery';
+import { ContenidoComponent } from "../contenido/contenido.component";
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,6 @@ import {} from '@types/jquery';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() pasaRequest = new EventEmitter();
-
-  public ListaNoticias: Array<any>[];
-
   keyboard = '';
   filtro = '';
   country = '';
@@ -26,18 +23,16 @@ export class HeaderComponent implements OnInit {
   constructor(private datos: DatosService) {
   }
 
-  lanzar(event){
-    this.pasaRequest.emit({request: this.hacerRequest()});
-    console.log('emitido');
-  }
-
-  hacerRequest(){
+ /* hacerRequest(){
     this.categoryEvery();
     this.datos.LoadDataEvery(this.keyboard, this.filtro, this.country, this.busq_fecha).subscribe(data => {
       console.log(data);
-      return data;
+      for (let noticia of data[0]){
+        noticia = new NoticiaComponent();
+        this.ListaNoticias.push(noticia);
+      }
     });
-  }
+  }*/
 
   Bread(id){ //Cambia los colores del Breadcrumb al clickar
     if (this.Listcategories.indexOf(id) > -1){

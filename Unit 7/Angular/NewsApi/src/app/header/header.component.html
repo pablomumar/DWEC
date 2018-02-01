@@ -9,7 +9,7 @@
         <form class="navbar-form navbar-center float-right-mediaq" role="search">
           <div class="input-group">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit" (click)="lanzar($event)">Go!</button>
+              <button class="btn btn-default" type="submit" (click)="categoryEvery()" [routerLink]="['/Busq']">Go!</button>
             </span>
             <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="keyboard" name="keyboard_input">
           </div>
@@ -23,10 +23,10 @@
 
       <div class="row">
         <ul class="breadcrumb col-md-12 col-sm-12 desaparece">
-          <li class="breadcrumb-item active col-md-3 col-sm-3 text-center" id="catAll"><a href="#" (click)="categoryEvery()">Todo</a></li>
-          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catSport"><a href="#" (click)="categorySport()">Deporte</a></li>
-          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catScience"><a href="#" (click)="categoryScience()">Ciencia</a></li>
-          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catMisc"><a href="#" (click)="categoryEntert()">Mix</a></li>
+          <li class="breadcrumb-item active col-md-3 col-sm-3 text-center" id="catAll"><a href="#" (click)="categoryEvery()" [routerLink]="['/']">Todo</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catSport"><a href="#" (click)="categorySport()" [routerLink]="['/Sport']">Deporte</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catScience"><a href="#" (click)="categoryScience()" [routerLink]="['/Science']">Ciencia</a></li>
+          <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catMisc"><a href="#" (click)="categoryEntert()" [routerLink]="['/Misc']">Mix</a></li>
         </ul>
       </div>
 
@@ -34,7 +34,7 @@
         <li class="nav-item dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Países<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#" (click)="countryEvery()">Todo</a></li>
+            <li><a href="#"  (click)="countryEvery()">Todo</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" (click)="countryEsp()">ESP</a></li>
             <li role="separator" class="divider"></li>
@@ -74,3 +74,4 @@
     </div>
   </nav>
 </div>
+<app-contenido [keyb]="keyboard" [filtro]="filtro" [country]="country" [busq_fecha]="busq_fecha"></app-contenido>

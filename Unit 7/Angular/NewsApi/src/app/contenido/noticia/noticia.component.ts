@@ -23,11 +23,12 @@ export class NoticiaComponent implements OnInit {
   url_image: string;
   publishedAt: string;
 
-  constructor(private noticiaSer: NoticiaServService, private route: ActivatedRoute) { }
+  constructor(/*private noticiaSer: NoticiaServService, private route: ActivatedRoute*/) {
+  }
 
 
   ngOnInit() {
-    this.noticiaSubscription = this.noticiaSer.$visible.subscribe((noticia: NoticiaComponent) => {
+    /*this.noticiaSubscription = this.noticiaSer.$visible.subscribe((noticia: NoticiaComponent) => {
       //this.noticiaSer.isVisible = noticia.title === this.noticia.title;
     })
   }
@@ -40,5 +41,5 @@ export class NoticiaComponent implements OnInit {
 
   toggle() {
     this.noticiaSer.$visible.next(this.noticia);
-  }
+  */}
 }

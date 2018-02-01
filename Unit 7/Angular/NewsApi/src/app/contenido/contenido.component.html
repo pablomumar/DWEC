@@ -1,25 +1,8 @@
-<!-- <app-noticia *ngFor="let noticia of ListaNoticias" [noticia]="noticia"></app-noticia>-->
-<div class="container">
-  <div class="titulo">
-    <h1> Bienvenido a News Api</h1>
-    <h3> Tu Api de noticias </h3>
-  </div>
-  <br>
-  <div class="contenido">
-    <div class="row">
-      <div class="col-md-6 col-sm-d">
-        <h6> Example </h6>
-        <p class="parraf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo ante quis tortor venenatis, sit amet mollis sem tincidunt. Mauris in dui ac nisl tristique sagittis sed condimentum quam. Aenean ut tempus enim. Pellentesque sed lacus non orci consectetur cursus. Donec sit amet nisl et ipsum malesuada scelerisque. Sed blandit nec neque congue interdum. Ut nec turpis et mi pretium scelerisque vel et elit. </p>
-      </div>
-      <br>
-      <div class="col-md-6 col-sm-d">
-        <h6> Example </h6>
-        <p class="parraf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo ante quis tortor venenatis, sit amet mollis sem tincidunt. Mauris in dui ac nisl tristique sagittis sed condimentum quam. Aenean ut tempus enim. Pellentesque sed lacus non orci consectetur cursus. Donec sit amet nisl et ipsum malesuada scelerisque. Sed blandit nec neque congue interdum. Ut nec turpis et mi pretium scelerisque vel et elit. </p>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
     </div>
-    <br>
-    <h6> Otro example </h6>
-    <p class="parraf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo ante quis tortor venenatis, sit amet mollis sem tincidunt. Mauris in dui ac nisl tristique sagittis sed condimentum quam. Aenean ut tempus enim. Pellentesque sed lacus non orci consectetur cursus. Donec sit amet nisl et ipsum malesuada scelerisque. Sed blandit nec neque congue interdum. Ut nec turpis et mi pretium scelerisque vel et elit. </p>
   </div>
 </div>
-<br>
+<app-lista-noticias [keyb]="keyboard" [filtro]="filtro" [country]="country" [busq_fecha]="busq_fecha"></app-lista-noticias>
