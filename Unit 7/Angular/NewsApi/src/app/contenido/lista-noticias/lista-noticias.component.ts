@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {NoticiaComponent} from "../noticia/noticia.component";
+import { Component, OnInit} from '@angular/core';
 import {DatosService} from "../../datos.service";
+import {NoticiaServService} from "../../noticia-serv.service";
 
 @Component({
   selector: 'app-lista-noticias',
@@ -9,24 +9,45 @@ import {DatosService} from "../../datos.service";
 })
 export class ListaNoticiasComponent implements OnInit {
 
-  public ListaNoticias: Array<NoticiaComponent>;
+  noticias: Array<any>;
 
-  @Input() keyb:string;
-  @Input() filtro:string;
-  @Input() country:string;
-  @Input() busq_fecha:string;
+  private id: any = null;
+  private name: string;
+  private source: Array<string> = [this.id, this.name];
+  private author: string;
+  private title: string;
+  private description: string;
+  private url_new: string;
+  private url_image: string;
+  private publishedAt: string;
 
-  lista: Array<any>;
-
-  constructor(private datos: DatosService) { }
+  constructor(private datos: DatosService, private obtenInfo: NoticiaServService) { }
 
   ngOnInit() {
-    this.datos.LoadDataEvery(this.keyb, this.filtro, this.country, this.busq_fecha).subscribe(data => {
-      console.log(data);
-      for (let noticia of data[0]){
-        noticia = new NoticiaComponent();
-        this.ListaNoticias.push(noticia);
-      }
+    this.datos.LoadDataEvery(this.obtenInfo.darKeyb(), this.obtenInfo.darFiltro(), this.obtenInfo.darCountry(), this.obtenInfo.darFechaBusq()).subscribe(data => {
+      console.log(data.articles);
+      this.cargarNoticias(data.articles);
     });
+  }
+
+  cargarNoticias(datos){
+    for (let x = 0; x < datos.length; x++){
+      let articulo = datos[x];
+      this.vincularNoticias(articulo);
+      //this.noticias.push(JSON.parse(articulo)); this.noticias undefined con y sin parse
+      console.log(this.noticias);
+    }
+  }
+
+  vincularNoticias(datos){
+    this.source = datos.source;
+    this.id = this.source[0];
+    this.name = this.source[1];
+    this.author = datos.author;
+    this.title = datos.title;
+    this.description = datos.description;
+    this.url_new = datos.url;
+    this.url_image = datos.urlToImage;
+    this.publishedAt = datos.publishedAt;
   }
 }

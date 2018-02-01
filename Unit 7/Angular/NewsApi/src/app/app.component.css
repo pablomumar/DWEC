@@ -17,10 +17,3 @@ html, body {
   height: 50px; /* .push must be the same height as .footer */
 }
 
-.blue{
-  background-color: aqua;
-}
-
-.blueClaro{
-  background-color: aquamarine;
-}

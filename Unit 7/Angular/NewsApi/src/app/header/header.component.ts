@@ -1,7 +1,7 @@
 import {Component,  OnInit} from '@angular/core';
 import {DatosService} from "../datos.service";
 import {} from '@types/jquery';
-import { ContenidoComponent } from "../contenido/contenido.component";
+import {NoticiaServService} from "../noticia-serv.service";
 
 @Component({
   selector: 'app-header',
@@ -19,20 +19,14 @@ export class HeaderComponent implements OnInit {
   bread='';
   Listcategories = ['catAll', 'catSport', 'catScience', 'catMisc'];
 
+  cont = 0;
 
-  constructor(private datos: DatosService) {
+  coloresClar = ['blueClaro', 'rojoClaro', 'verdeClaro', 'amarilloClaro', 'rosaClaro', 'blanco'];
+  coloresOsc = ['blue', 'rojo', 'verde', 'amarillo', 'rosa', 'gris'];
+
+
+  constructor(private datos: DatosService, private darInfo: NoticiaServService) {
   }
-
- /* hacerRequest(){
-    this.categoryEvery();
-    this.datos.LoadDataEvery(this.keyboard, this.filtro, this.country, this.busq_fecha).subscribe(data => {
-      console.log(data);
-      for (let noticia of data[0]){
-        noticia = new NoticiaComponent();
-        this.ListaNoticias.push(noticia);
-      }
-    });
-  }*/
 
   Bread(id){ //Cambia los colores del Breadcrumb al clickar
     if (this.Listcategories.indexOf(id) > -1){
@@ -48,29 +42,25 @@ export class HeaderComponent implements OnInit {
   categoryEvery(){
     this.bread = 'catAll';
     this.Bread(this.bread);
+    this.darInfo.pedirBusqCompleta(this.keyboard, this.filtro, this.country, this.busq_fecha);
     return this.category='';
   };
 
   categorySport(){
-    this.datos.LoadSourceData('sport').subscribe(data=>
-      console.log(data)
-  );
+    this.darInfo.pedirCat(this.category);
+    console.log('enviar');
     this.bread = 'catSport';
     this.Bread(this.bread);
   };
 
   categoryScience(){
-    this.datos.LoadSourceData('science').subscribe(data=>
-      console.log(data)
-  );
+    this.darInfo.pedirCat(this.category);
     this.bread = 'catScience';
     this.Bread(this.bread);
   };
 
   categoryEntert(){
-    this.datos.LoadSourceData('entertainment').subscribe(data=>
-      console.log(data)
-  );
+    this.darInfo.pedirCat(this.category);
     this.bread = 'catMisc';
     this.Bread(this.bread);
   };
@@ -84,7 +74,7 @@ export class HeaderComponent implements OnInit {
   };
 
   countryUK(){
-    return this.country='gb';
+    return this.country='en';
   };
 
   countryFR(){
@@ -145,6 +135,44 @@ export class HeaderComponent implements OnInit {
   preferencyRelev(){
     return this.filtro='relevancy';
   }
+
+  devuelveColores(){
+    this.cont++;
+    if (this.cont == (this.coloresClar.length - 1)){
+      this.cont = 0
+    }
+    return [this.coloresClar[this.cont], this.coloresOsc[this.cont]]
+  }
+
+  cambiaColores(claro = null, oscuro = null){
+    claro = this.devuelveColores()[0];
+    oscuro = this.devuelveColores()[1];
+    $('#mainHeader').addClass(claro)
+      .removeClass('blanco');
+    $('#submenu').addClass(oscuro)
+      .addClass('color')
+      .removeClass('blanco');
+    $('button').addClass(oscuro)
+      .removeClass('gris');
+  }
+
+  Limpia(){
+    for (let coloroscuro of this.coloresOsc){
+      $('#submenu').removeClass(coloroscuro);
+      $('button').removeClass(coloroscuro);
+      }
+    for (let colorclaro of this.coloresClar) {
+      $('#mainHeader').removeClass(colorclaro);
+      }
+      this.normal();
+    }
+
+    normal(){
+      $('#mainHeader').addClass('blanco');
+      $('#submenu').addClass('blanco')
+        .removeClass('color');
+      $('button').addClass('gris');
+    }
 
   ngOnInit() {
 

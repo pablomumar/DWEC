@@ -15,13 +15,13 @@
           </div>
         </form>
 
-        <button class="btn btn-default desaparece_boton" (click)="pedir($event)">Cambia Fondo</button>
-        <button class="btn btn-default desaparece_boton" (click)="pedir($event)">Cambia Color</button>
+        <button class="btn btn-default desaparece_boton" (click)="Limpia()">Limpiar</button>
+        <button class="btn btn-default desaparece_boton" (click)="cambiaColores()">Cambia Color</button>
 
       </div>
 
 
-      <div class="row">
+      <div class="row" id="submenu">
         <ul class="breadcrumb col-md-12 col-sm-12 desaparece">
           <li class="breadcrumb-item active col-md-3 col-sm-3 text-center" id="catAll"><a href="#" (click)="categoryEvery()" [routerLink]="['/']">Todo</a></li>
           <li class="breadcrumb-item col-md-3 col-sm-3 text-center" id="catSport"><a href="#" (click)="categorySport()" [routerLink]="['/Sport']">Deporte</a></li>
@@ -34,7 +34,7 @@
         <li class="nav-item dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Países<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#"  (click)="countryEvery()">Todo</a></li>
+            <li><a href="#" (click)="countryEvery()">Todo</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" (click)="countryEsp()">ESP</a></li>
             <li role="separator" class="divider"></li>
@@ -74,4 +74,6 @@
     </div>
   </nav>
 </div>
-<app-contenido [keyb]="keyboard" [filtro]="filtro" [country]="country" [busq_fecha]="busq_fecha"></app-contenido>
+<div id="fondo">
+  <app-contenido></app-contenido>
+</div>

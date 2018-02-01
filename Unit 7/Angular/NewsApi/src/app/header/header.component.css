@@ -38,6 +38,7 @@
 
 .breadcrumb>li{
   padding: .75rem 1rem;
+  background-color: inherit;
 }
 
 .breadcrumb > li + li:before {
@@ -48,3 +49,24 @@
   background-color: darkgray;
   height:100%;
 }
+
+/* ------------------- Colores ---------------------*/
+.color{background-color: inherit !important;}
+
+.blue{background-color: #0033cc;}
+.blueClaro{background-color: #3366ff;}
+
+.rojo{background-color: #b30000;}
+.rojoClaro{background-color: #ffb3b3;}
+
+.verde{background-color: #004d00;}
+.verdeClaro{background-color: #00e600;}
+
+.amarillo{background-color: #cccc00;}
+.amarilloClaro{background-color: #ffff80;}
+
+.rosa{background-color: #b30059;}
+.rosaClaro{background-color: #ff0080;}
+
+.blanco{background-color: #fff;}
+.gris{background-color: #ccc;}

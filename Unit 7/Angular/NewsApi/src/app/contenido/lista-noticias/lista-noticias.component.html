@@ -1,3 +1,6 @@
-<div class="container" (pasaFiltro)="obtenFiltro($event)">
-  <div class="row" *ngFor="let noticia of ListaNoticias">{{noticia}}</div>
+<div class="container">
+  <div class="row" *ngFor="let noticia of ListaNoticias">
+    <div class="titulo">{{title}}</div>
+    <div class="contenido">{{description}}</div>
+  </div>
 </div>
