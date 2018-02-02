@@ -51,7 +51,7 @@
 }
 
 /* ------------------- Colores ---------------------*/
-.color{background-color: inherit !important;}
+.color{background-color: inherit}
 
 .blue{background-color: #0033cc;}
 .blueClaro{background-color: #3366ff;}

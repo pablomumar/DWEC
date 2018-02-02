@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     ListaNoticiasComponent,
     FooterComponent,
     InicioComponent,
-    ListaSourcesComponent
+    ListaSourcesComponent,
   ],
   imports: [
     BrowserModule,

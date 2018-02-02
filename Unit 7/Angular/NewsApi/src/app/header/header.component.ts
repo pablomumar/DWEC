@@ -1,4 +1,4 @@
-import {Component,  OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DatosService} from "../datos.service";
 import {} from '@types/jquery';
 import {NoticiaServService} from "../noticia-serv.service";
@@ -9,6 +9,8 @@ import {NoticiaServService} from "../noticia-serv.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+
   keyboard = '';
   filtro = '';
   country = '';
@@ -27,6 +29,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(private datos: DatosService, private darInfo: NoticiaServService) {
   }
+
+
 
   Bread(id){ //Cambia los colores del Breadcrumb al clickar
     if (this.Listcategories.indexOf(id) > -1){

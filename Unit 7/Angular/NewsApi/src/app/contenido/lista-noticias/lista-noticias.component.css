@@ -1,0 +1,51 @@
+.image_noticia{
+  height: auto;
+  width: 6vw;
+  float: left;
+}
+
+.titulo{
+  height: 12vh;
+  width: 100%;
+  border-top: 1px #cccccc solid;
+  border-bottom: 1px #cccccc solid;
+  margin-bottom: 4vh;
+}
+
+.contenido{
+  margin-bottom: 10vh;
+}
+
+h2{
+  width: 100%;
+  float: left;
+}
+
+.descripcion{
+  float: right;
+  font-size: 18px;
+}
+
+.url{
+  font-size: 11px;
+  float: right;
+}
+
+.author{
+  float: right;
+  font-size: 11px;
+}
+
+.desapear{
+  display: none !important;
+}
+
+.flexing{
+  display: flex;
+  flex-direction: row;
+}
+
+.desc{
+  align-self: flex-end;
+  float: right;
+}

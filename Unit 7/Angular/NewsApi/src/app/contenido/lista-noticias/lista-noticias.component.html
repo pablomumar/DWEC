@@ -1,6 +1,18 @@
 <div class="container">
-  <div class="row" *ngFor="let noticia of ListaNoticias">
-    <div class="titulo">{{title}}</div>
-    <div class="contenido">{{description}}</div>
+  <div class="row" *ngFor="let noticia of noticias">
+    <br>
+    <div class="titulo row" (click)="showDesc()">
+      <h2>{{noticia?.title}}</h2>
+      <p class="author">{{noticia?.author}}</p>
+    </div>
+    <br>
+    <div class="contenido row desapear flexing">
+      <img class="image_noticia col-md-4 col-sm-3" src="{{noticia?.urlToImage}}">
+      <div class="col-md-8 col-sm-9 desc">
+        <p class="descripcion">{{noticia.description}}</p>
+        <p class="url">{{noticia?.url}}</p>
+      </div>
+    </div>
+    <br>
   </div>
 </div>

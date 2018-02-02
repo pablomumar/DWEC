@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row" *ngFor="let source of sources">
+    <br>
+    <div class="contenido row">
+      <h3>{{source?.id}}</h3>
+      <p class="descripcion col-md-12 col-sm-12">{{source.description}}</p>
+      <p class="url">{{source?.url}}</p>
+    </div>
+    <br>
+  </div>
+</div>
